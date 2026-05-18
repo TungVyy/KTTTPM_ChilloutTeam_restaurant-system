@@ -23,4 +23,4 @@ jobs:
         run: |
           cd frontend
           npm install
-          npm run build
+          run npm dev 
