@@ -3,6 +3,7 @@ name: CI Pipeline
 on:
   push:
     branches:
+      - main
       - develop
       - feature/**
 
@@ -12,15 +13,19 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
 
-      - name: Build Frontend
+      - name: Install dependencies
         run: |
           cd frontend
           npm install
-          run npm dev 
+
+      - name: Build frontend
+        run: |
+          cd frontend
+          npm run build
