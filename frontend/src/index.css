@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@theme {
+  --color-mint: #95c6bb;
+  --color-mint-dark: #6da99c;
+  --color-cream: #efe7d2;
+  --color-soft-gray: #f3f5f4;
+  --color-line: #d6e3df;
+  --font-handwritten: "Itim", cursive;
+}
+
 body {
   @apply m-0 bg-white text-gray-800;
 }
