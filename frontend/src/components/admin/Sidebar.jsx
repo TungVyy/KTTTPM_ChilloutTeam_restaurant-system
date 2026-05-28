@@ -1,4 +1,4 @@
-import logo from "../../assets/img/logochillout.jpg"; 
+import logo from "../../assets/img/logochillout.jpg";
 
 export default function Sidebar({ setPage, page }) {
   // Giả sử sau này lấy data từ Context hoặc LocalStorage
@@ -21,6 +21,7 @@ export default function Sidebar({ setPage, page }) {
         </div>
 
         <nav className="menu-list">
+          {/* 1. Nút Nhân viên của nhóm */}
           <div
             className={`menu-item ${page === "employee" ? "active" : ""}`}
             onClick={() => setPage("employee")}
@@ -28,11 +29,28 @@ export default function Sidebar({ setPage, page }) {
             <span className="icon"></span> Nhân viên
           </div>
 
+          {/* 2. Nút Thực đơn của nhóm */}
           <div
             className={`menu-item ${page === "menu" ? "active" : ""}`}
             onClick={() => setPage("menu")}
           >
             <span className="icon"></span> Thực đơn
+          </div>
+
+          {/* 3. Nút Sơ đồ bàn (Màn hình của bạn) */}
+          <div
+            className={`menu-item ${page === "staff-tables" ? "active" : ""}`}
+            onClick={() => setPage("staff-tables")}
+          >
+            <span className="icon"></span> Sơ đồ bàn (Staff)
+          </div>
+
+          {/* 4. Nút Gọi món (Màn hình của bạn) */}
+          <div
+            className={`menu-item ${page === "staff-order" ? "active" : ""}`}
+            onClick={() => setPage("staff-order")}
+          >
+            <span className="icon"></span> Gọi món (Staff)
           </div>
         </nav>
       </div>
